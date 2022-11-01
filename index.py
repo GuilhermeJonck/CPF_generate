@@ -3,29 +3,35 @@ from valida_cpf import validar
 
 
 def main():
+
     choice = 0
-    qtd = 0
+
     while choice != 3:
+
         print(
             """
-        Gerador de CPF's
+           ## Gerador de CPF's ##
+
         [ 1 ] gerar CPF valido
         [ 2 ] validar CPF 
         [ 3 ] lista com CPF's
-        [ 4 ] sair do programa"""
+        \n"""
         )
-        choice = int(input("Qual é sua opção ?\n"))
+        choice = int(input(" Escolha uma opção ==> "))
+
         if choice == 1:
             return print(gera_cpf_valido())
+
         elif choice == 2:
-            cpf = input("digite o CPF ==> ")
+            cpf = input("Digite o CPF ==> ")
             return print(validar(cpf))
 
         elif choice == 3:
             qtd = int(input("Quantos CPF's ==> "))
-            return print([gera_cpf_valido() for x in range(qtd)])
+            return print([gera_cpf_valido() for _ in range(qtd)])
+
         else:
-            print("Opção inválida.Tente novamente")
+            print("\nOpção inválida.Tente novamente")
     print("Fim do programa")
 
 
