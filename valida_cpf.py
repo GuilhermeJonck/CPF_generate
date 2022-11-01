@@ -1,11 +1,11 @@
-def validar(numero):
+def validar(cpf):
 
-    cpf = [int(num) for num in numero if num.isdigit()]
+    cpf = [int(num) for num in cpf if num.isdigit()]
 
-    if len(numero) != 11:
-        return "CPF invalido"
-    elif numero == numero[::-1]:
-        return "CPF invalido"
+    if len(cpf) != 11:
+        return False
+    elif cpf == cpf[::-1]:
+        return False
     for i in range(9, 11):
         valor = sum((cpf[num] * ((i + 1) - num) for num in range(0, i)))
         digito = ((valor * 10) % 11) % 10
