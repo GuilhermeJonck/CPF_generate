@@ -23,14 +23,24 @@ def main():
         choice = int(input(" Escolha uma opção ==> "))
 
         if choice == 1:
-            return print(cpf_valido())
+            return print(
+                f"""
+        CPF ==> {cpf_valido()}"""
+            )
 
         elif choice == 2:
-            return print(mascara(cpf_valido()))
+            return print(
+                f"""
+        CPF ==> {mascara(cpf_valido())}"""
+            )
 
         elif choice == 3:
             cpf = input("Digite o CPF ==> ")
-            return print(validar(cpf))
+            return (
+                print("### CPF Valido ###")
+                if validar(cpf) == True
+                else print("### CPF Invalido ###")
+            )
 
         elif choice == 4:
             qtd = int(input("Quantos CPF's ==> "))
